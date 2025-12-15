@@ -11,6 +11,15 @@ Si la vocal no es válida, lanzar ValueError.
 """
 
 def emphasize_vowel(phrase: str, vowel: str) -> str:
+    vowel_lower = vowel.lower()
+    if len(vowel) != 1:
+        raise ValueError("no valido")
+    if vowel_lower not in "aeiou":
+        raise ValueError("no valido")
+    vowel_upper = vowel_lower.upper()
+    results = phrase.replace(vowel_lower, vowel_upper)
+    return results
+    
     """
     Convierte a mayúscula todas las apariciones de vowel en la frase.
     Sugerencia:
